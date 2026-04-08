@@ -33,12 +33,10 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        working-directory: docs-site
         run: npm ci
 
       - name: Build docs
-        working-directory: docs-site
-        run: npm run build
+        run: npm run docs:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

@@ -22,10 +22,10 @@ function getHelpPageInputs(): Record<string, string> {
 }
 
 export default defineConfig({
-  root: "pages",
+  root: resolve(__dirname, "pages"),
   base: "/vscode-railsim-grammer/help/",
   build: {
-    outDir: "../dist",
+    outDir: resolve(__dirname, "dist"),
     emptyOutDir: true,
     rollupOptions: {
       input: getHelpPageInputs(),

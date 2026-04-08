@@ -68,7 +68,11 @@
         "build": "tsc -p tsconfig.server.json && tsc -p tsconfig.client.json",
         "test": "vitest run",
         "package": "npm run build && vsce package",
-        "publish": "npm run build && vsce publish"
+        "publish": "npm run build && vsce publish",
+        "docs:process": "npx tsx docs-site/scripts/process-help.ts",
+        "docs:build": "npm run docs:process && vite build --config docs-site/vite.config.ts",
+        "docs:dev": "npm run docs:process && vite --config docs-site/vite.config.ts --open",
+        "docs:preview": "vite preview --config docs-site/vite.config.ts"
     },
     "devDependencies": {
         "@types/node": "^25.5.2",
@@ -77,6 +81,7 @@
         "iconv-lite": "^0.7.2",
         "tsx": "^4.21.0",
         "typescript": "^6.0.2",
+        "vite": "^8.0.7",
         "vitest": "^4.1.2",
         "vscode-oniguruma": "^2.0.1",
         "vscode-textmate": "^9.3.2"

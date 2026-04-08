@@ -13,14 +13,17 @@
  */
 
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, readdirSync } from "node:fs";
-import { resolve, extname } from "node:path";
+import { resolve, dirname, extname } from "node:path";
+import { fileURLToPath } from "node:url";
 import iconv from "iconv-lite";
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 const HELP_SRC = resolve(
-  import.meta.dirname,
+  __dirname,
   "../../vendor/railsim2/Distribution/jp/RailSim2/Help"
 );
-const PAGES_OUT = resolve(import.meta.dirname, "../pages");
+const PAGES_OUT = resolve(__dirname, "../pages");
 
 const BANNER_CSS = `
 .rs2-unofficial-banner {
