@@ -35,7 +35,7 @@
     "@types/node": "^25.5.2",
     "@types/vscode": "^1.110.0",
     "@vscode/vsce": "^3.0.0",
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.28.1",
     "vitest": "^4.1.2",
     "vscode-oniguruma": "^2.0.1",
     "vscode-textmate": "^9.3.2"
